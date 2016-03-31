@@ -10,12 +10,12 @@
 #import "ViewController.h"
 
 
-@interface ViewController () {
+@interface ChartViewController () {
     int previousStepperValue;
     int totalNumber;
 } @end
 
-@implementation ViewController
+@implementation ChartViewController
 
 #pragma mark - View Lifecycle
 

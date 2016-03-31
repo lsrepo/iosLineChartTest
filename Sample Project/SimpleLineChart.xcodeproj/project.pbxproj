@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		279ACCC91CAD51F100A0272E /* MimoChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279ACCC81CAD51F100A0272E /* MimoChartViewController.swift */; };
 		8AB8D62F1A7ABDF600FC4AEC /* BEMPermanentPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB8D62E1A7ABDF600FC4AEC /* BEMPermanentPopupView.m */; };
 		99B15643187B412400B24591 /* StatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99B15642187B412400B24591 /* StatsViewController.m */; };
 		99B3FA3A1877898B00539A7B /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 99B3FA381877898B00539A7B /* LICENSE */; };
 		99B3FA3B1877898B00539A7B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 99B3FA391877898B00539A7B /* README.md */; };
 		A63990B51AD4923900B14D88 /* BEMAverageLine.m in Sources */ = {isa = PBXBuildFile; fileRef = A63990B41AD4923900B14D88 /* BEMAverageLine.m */; };
-		A64594521BAB257B00D6B8FD /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A64594501BAB257B00D6B8FD /* Launch Screen.storyboard */; settings = {ASSET_TAGS = (); }; };
+		A64594521BAB257B00D6B8FD /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A64594501BAB257B00D6B8FD /* Launch Screen.storyboard */; };
 		C3B90A5F187D15F7003E407D /* BEMCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B90A59187D15F7003E407D /* BEMCircle.m */; };
 		C3B90A60187D15F7003E407D /* BEMLine.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B90A5B187D15F7003E407D /* BEMLine.m */; };
 		C3B90A61187D15F7003E407D /* BEMSimpleLineGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B90A5D187D15F7003E407D /* BEMSimpleLineGraphView.m */; };
@@ -44,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		279ACCC71CAD51F100A0272E /* SimpleLineChart-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SimpleLineChart-Bridging-Header.h"; sourceTree = "<group>"; };
+		279ACCC81CAD51F100A0272E /* MimoChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MimoChartViewController.swift; sourceTree = "<group>"; };
 		8AB8D62D1A7ABDF600FC4AEC /* BEMPermanentPopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMPermanentPopupView.h; sourceTree = "<group>"; };
 		8AB8D62E1A7ABDF600FC4AEC /* BEMPermanentPopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMPermanentPopupView.m; sourceTree = "<group>"; };
 		99B15641187B412400B24591 /* StatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatsViewController.h; sourceTree = "<group>"; };
@@ -169,6 +172,8 @@
 				99B15642187B412400B24591 /* StatsViewController.m */,
 				C3FD8170186DFD9A00FD8ED3 /* Images.xcassets */,
 				C3FD815F186DFD9A00FD8ED3 /* Supporting Files */,
+				279ACCC81CAD51F100A0272E /* MimoChartViewController.swift */,
+				279ACCC71CAD51F100A0272E /* SimpleLineChart-Bridging-Header.h */,
 			);
 			path = SimpleLineChart;
 			sourceTree = "<group>";
@@ -249,9 +254,13 @@
 		C3FD814D186DFD9A00FD8ED3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Boris Emorine";
 				TargetAttributes = {
+					C3FD8154186DFD9A00FD8ED3 = {
+						DevelopmentTeam = 54653AF2XS;
+					};
 					C3FD8175186DFD9A00FD8ED3 = {
 						TestTargetID = C3FD8154186DFD9A00FD8ED3;
 					};
@@ -314,6 +323,7 @@
 				99B15643187B412400B24591 /* StatsViewController.m in Sources */,
 				A63990B51AD4923900B14D88 /* BEMAverageLine.m in Sources */,
 				C3FD8165186DFD9A00FD8ED3 /* main.m in Sources */,
+				279ACCC91CAD51F100A0272E /* MimoChartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,11 +458,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SimpleLineChart/SimpleLineChart-Prefix.pch";
 				INFOPLIST_FILE = "SimpleLineChart/SimpleLineChart-Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "BorisEmorine.${PRODUCT_NAME:rfc1034identifier}";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = se.ericsson.SimpleLineSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "SimpleLineChart/SimpleLineChart-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -462,11 +480,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SimpleLineChart/SimpleLineChart-Prefix.pch";
 				INFOPLIST_FILE = "SimpleLineChart/SimpleLineChart-Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "BorisEmorine.${PRODUCT_NAME:rfc1034identifier}";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = se.ericsson.SimpleLineSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "SimpleLineChart/SimpleLineChart-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
